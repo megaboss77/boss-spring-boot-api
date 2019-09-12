@@ -11,19 +11,31 @@
 
     <artifactId>boss-api-web</artifactId>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Brixton.SR5</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
     <dependencies>
 
         <dependency>
             <groupId>com.h.jamil.api</groupId>
             <artifactId>api-framework</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${version}</version>
         </dependency>
 
         <dependency>
-            <artifactId>boss-api</artifactId>
+            <artifactId>boss-api-entity</artifactId>
             <groupId>com.api.boss</groupId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${version}</version>
         </dependency>
 
         <dependency>
@@ -114,10 +126,10 @@
             <version>1.0.10.RELEASE</version>
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-data-jpa</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
     </dependencies>
 
@@ -140,11 +152,11 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <dateFormat>yyyyMMdd-HHmmss</dateFormat><!--  human-readable part of the version number -->
-                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
-                    <generateGitPropertiesFile>true</generateGitPropertiesFile><!-- somehow necessary. otherwise the variables are not available in the pom -->
-                </configuration>
+<!--                <configuration>-->
+<!--                    <dateFormat>yyyyMMdd-HHmmss</dateFormat>&lt;!&ndash;  human-readable part of the version number &ndash;&gt;-->
+<!--                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>-->
+<!--                    <generateGitPropertiesFile>true</generateGitPropertiesFile>&lt;!&ndash; somehow necessary. otherwise the variables are not available in the pom &ndash;&gt;-->
+<!--                </configuration>-->
             </plugin>
 
         </plugins>
