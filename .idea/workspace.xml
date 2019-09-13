@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0cb15f5-d106-4ee4-9d2b-1c793ab89ddb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-entity/src/main/java/com/boss/api/domain/AccountLoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-entity/src/main/java/com/boss/api/domain/AccountLoan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-entity/src/main/java/com/boss/api/entity/AccountLoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-entity/src/main/java/com/boss/api/entity/AccountLoan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-entity/target/classes/com/boss/api/domain/AccountLoan.class" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-entity/target/classes/com/boss/api/domain/AccountLoan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-entity/target/classes/com/boss/api/entity/AccountLoan.class" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-entity/target/classes/com/boss/api/entity/AccountLoan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-web/src/main/java/com/boss/api/BossApiAPP.java" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-web/src/main/java/com/boss/api/BossApiAPP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-web/src/main/java/com/boss/api/controller/BossAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-web/src/main/java/com/boss/api/controller/BossAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-web/src/main/java/com/boss/api/repository/AccountLoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-web/src/main/java/com/boss/api/repository/AccountLoanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-web/target/classes/com/boss/api/BossApiAPP.class" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-web/target/classes/com/boss/api/BossApiAPP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-web/target/classes/com/boss/api/controller/BossAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-web/target/classes/com/boss/api/controller/BossAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boss-api-web/target/classes/com/boss/api/repository/AccountLoanRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/boss-api-web/target/classes/com/boss/api/repository/AccountLoanRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boss-api-web/src/main/resources/CreateTable.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
