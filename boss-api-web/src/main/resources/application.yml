@@ -1,0 +1,56 @@
+server:
+  #Use port: 0 to use randomly generated port number
+  port: 8070
+  contextPath: /rest/api
+
+    #  eureka.client.register-with-eureka=false
+    #  eureka.client.fetchRegistry=false
+    #  eureka.client.server.waitTimeInMsWhenSyncEmpty=0
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+    instance:
+      preferIpAddress: true
+      leaseRenewalIntervalInSeconds: 5
+      leaseExpirationDurationInSeconds: 8
+    metadata-map:
+      management.port: ${management.port:8081}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+some:
+  thing:
+    value: abcd
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/SCHOOL_A?useUnicode=yes&characterEncoding=UTF-8
+    username: SCHOOL_A
+    password: SCHOOL_A
+    tomcat:
+      initial-size: 1
+      max-active: 200
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: true
+  jpa:
+    properties:
+      hibernate:
+        default_schema: SCHOOL_A
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+    show-sql: true
+
+
+#logging:
+#  config: TestSchoolAPI/test-school-api-web/src/main/resources/logback-spring.xml

@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bossapiweb" />
+        <module name="boss-api-entity" />
+        <module name="boss-api-web" />
         <module name="bossapientity" />
       </profile>
     </annotationProcessing>

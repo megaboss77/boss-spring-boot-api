@@ -98,21 +98,21 @@
         </dependency>
 
         <!-- Logback start here -->
-<!--        <dependency>-->
-<!--            <groupId>ch.qos.logback</groupId>-->
-<!--            <artifactId>logback-core</artifactId>-->
-<!--            <version>${ch.qos.logback.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>ch.qos.logback</groupId>-->
-<!--            <artifactId>logback-classic</artifactId>-->
-<!--            <version>${ch.qos.logback.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>ch.qos.logback</groupId>-->
-<!--            <artifactId>logback-access</artifactId>-->
-<!--            <version>${ch.qos.logback.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+            <version>1.2.2</version>
+        </dependency>
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
@@ -152,11 +152,11 @@
                         </goals>
                     </execution>
                 </executions>
-<!--                <configuration>-->
-<!--                    <dateFormat>yyyyMMdd-HHmmss</dateFormat>&lt;!&ndash;  human-readable part of the version number &ndash;&gt;-->
-<!--                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>-->
-<!--                    <generateGitPropertiesFile>true</generateGitPropertiesFile>&lt;!&ndash; somehow necessary. otherwise the variables are not available in the pom &ndash;&gt;-->
-<!--                </configuration>-->
+                <configuration>
+                    <dateFormat>yyyyMMdd-HHmmss</dateFormat><!--  human-readable part of the version number -->
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                    <generateGitPropertiesFile>true</generateGitPropertiesFile><!-- somehow necessary. otherwise the variables are not available in the pom -->
+                </configuration>
             </plugin>
 
         </plugins>
