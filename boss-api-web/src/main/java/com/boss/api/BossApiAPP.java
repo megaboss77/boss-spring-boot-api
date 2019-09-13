@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
 
-@EnableJpaRepositories(basePackages = "com.h.jamil.api.test.school.repository")
+@EnableJpaRepositories(basePackages = "com.boss.api.repository")
 @SpringBootApplication
 @EnableAsync
 @EnableCaching

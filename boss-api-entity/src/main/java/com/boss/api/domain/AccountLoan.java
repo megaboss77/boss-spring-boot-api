@@ -1,19 +1,37 @@
 package com.boss.api.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value = "AccountLoan", description = "Data model for Student")
 @JsonPropertyOrder({"accountType", "documentNumber","effectiveDate"})
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountLoan {
+    private String accountNumber;
     private String accountType;
     private String documentNumber;
     private String effectiveDate;
     private Double transactionAmount;
+
+    @Override
+    public String toString() {
+        return "AccountLoan{" +
+                "accountNumber='" + accountNumber + '\'' +
+                ", accountType='" + accountType + '\'' +
+                ", documentNumber='" + documentNumber + '\'' +
+                ", effectiveDate='" + effectiveDate + '\'' +
+                ", transactionAmount=" + transactionAmount +
+                '}';
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
     public String getAccountType() {
         return accountType;
@@ -23,7 +41,6 @@ public class AccountLoan {
         this.accountType = accountType;
     }
 
-    @JsonProperty(value = "documentNumber", required = true)
     public String getDocumentNumber() {
         return documentNumber;
     }
@@ -48,17 +65,8 @@ public class AccountLoan {
         this.transactionAmount = transactionAmount;
     }
 
-    @Override
-    public String toString() {
-        return "AccountLoan{" +
-                "accountType='" + accountType + '\'' +
-                ", documentNumber='" + documentNumber + '\'' +
-                ", effectiveDate='" + effectiveDate + '\'' +
-                ", transactionAmount=" + transactionAmount +
-                '}';
-    }
-
-    public AccountLoan(String accountType, String documentNumber, String effectiveDate, Double transactionAmount) {
+    public AccountLoan(String accountNumber, String accountType, String documentNumber, String effectiveDate, Double transactionAmount) {
+        this.accountNumber = accountNumber;
         this.accountType = accountType;
         this.documentNumber = documentNumber;
         this.effectiveDate = effectiveDate;

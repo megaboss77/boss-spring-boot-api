@@ -1,8 +1,10 @@
 package com.boss.api.controller;
 
 import com.boss.api.domain.AccountLoan;
+import com.boss.api.repository.AccountLoanRepository;
 import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 
+@Transactional
 @RefreshScope
 @RestController
 @EnableAutoConfiguration
@@ -19,6 +23,9 @@ import javax.servlet.http.HttpServletRequest;
 @Api(tags = "Boss.Api", value = "v1", description = "BOSS API")
 @RequestMapping(value = "/v1")
 public class BossAPI {
+
+    @Autowired
+    private AccountLoanRepository accountLoanRepository;
 
 
 
@@ -41,13 +48,20 @@ public class BossAPI {
     @ResponseBody
     AccountLoan getAccountLoan(@NotBlank
                        @ApiParam(name = "accountId", value = "Id of the Account", required = true)
-                       @PathVariable(value = "accountId") Integer accountId,
+                       @PathVariable(value = "accountId") String accountId,
                            HttpServletRequest request) throws Exception {
-        AccountLoan mock = new AccountLoan(accountId.toString(),"5730704121","2020-20-10",5000.0);
+        AccountLoan mock = new AccountLoan(accountId,"SAVING","5730804234","2020-20-10",5000.0);
 
+        com.boss.api.entity.AccountLoan accountLoanEnt = accountLoanRepository.findOne(accountId);
+        System.out.println("TEST_REPO"+accountLoanEnt.getAccountNumber());
+        AccountLoan accountLoanDomain = new AccountLoan(accountLoanEnt.getAccountNumber(),
+                accountLoanEnt.getAccountType(),
+                accountLoanEnt.getDocumentNumber(),
+                accountLoanEnt.getEffectiveDate(),
+                accountLoanEnt.getTransactionAmount()
+        );
 
-
-        return mock;
+        return accountLoanDomain;
     }
 
     // GET: /v1/accounts/loans/{accountId}/payment

@@ -3,13 +3,21 @@ package com.boss.api.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "ACCOUNTLOAN")
+
+@Entity
+@Table(name = "ACCOUNT_LOAN")
 public class AccountLoan implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
+    @Column(name = "ACCOUNT_NUMBER", length = 13, nullable = false)
     private String accountNumber;
+    @Column(name = "ACCOUNT_TYPE", length = 13, nullable = false)
     private String accountType;
+    @Column(name = "DOCUMENT_NUMBER", length = 13, nullable = false)
     private String documentNumber;
+    @Column(name = "EFFECTIVE_DATE", length = 13, nullable = false)
     private String effectiveDate;
+    @Column(name = "TRANSACTION_AMOUNT", length = 13, nullable = false)
     private Double transactionAmount;
 
     public String getAccountNumber() {
